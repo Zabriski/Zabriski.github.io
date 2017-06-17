@@ -1,0 +1,40 @@
+html,
+body
+	min-height: 100vh
+
+body
+	background: #dedede
+	margin: 0
+	padding: 0
+	font:
+		size: 14px
+		family: 'Open Sans', sans-serif
+		color: #000
+	-webkit-font-smoothing: antialiased
+	-webkit-text-size-adjust: 100%
+
+a, a:hover, a:focus, a:active
+	text-decoration: none !important
+
+.side-bar ul > li > a,
+.mobile-nav ul > li > a
+	color: #839d56
+	font-size: 11pt
+
+	&:hover, &:focus, &.active
+		font-weight: bold
+
+.side-bar ul > li > a
+	&:hover, &:focus, &.active
+		&::after
+			content: "▬"
+			position: absolute
+			right: 1px
+
+.test
+	background:
+		image: url(../img/crab.png)
+		repeat: repeat
+		attachment: fixed
+	width: auto
+	height: 240px
