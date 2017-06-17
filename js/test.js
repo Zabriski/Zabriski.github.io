@@ -1,0 +1,9 @@
+{
+  "+1":"https://assets-cdn.github.com/images/icons/emoji/unicode/1f44d.png?v7",
+  "-1":"https://assets-cdn.github.com/images/icons/emoji/unicode/1f44e.png?v7",
+  "100":"https://assets-cdn.github.com/images/icons/emoji/unicode/1f4af.png?v7",
+  "1234":"https://assets-cdn.github.com/images/icons/emoji/unicode/1f522.png?v7",
+  "1st_place_medal":"https://assets-cdn.github.com/images/icons/emoji/unicode/1f947.png?v7",
+  "2nd_place_medal":"https://assets-cdn.github.com/images/icons/emoji/unicode/1f948.png?v7",
+  "3rd_place_medal":"https://assets-cdn.github.com/images/icons/emoji/unicode/1f949.png?v7"
+}
