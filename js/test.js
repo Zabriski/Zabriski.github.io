@@ -1,9 +1,9 @@
 {
-  "+1":"https://assets-cdn.github.com/images/icons/emoji/unicode/1f44d.png?v7",
-  "-1":"https://assets-cdn.github.com/images/icons/emoji/unicode/1f44e.png?v7",
-  "100":"https://assets-cdn.github.com/images/icons/emoji/unicode/1f4af.png?v7",
-  "1234":"https://assets-cdn.github.com/images/icons/emoji/unicode/1f522.png?v7",
-  "1st_place_medal":"https://assets-cdn.github.com/images/icons/emoji/unicode/1f947.png?v7",
-  "2nd_place_medal":"https://assets-cdn.github.com/images/icons/emoji/unicode/1f948.png?v7",
-  "3rd_place_medal":"https://assets-cdn.github.com/images/icons/emoji/unicode/1f949.png?v7"
+  "tadboo":"https://imgfast.net/users/3812/33/12/29/smiles/2533868582.png",
+  "paf":"https://imgfast.net/users/3812/33/12/29/smiles/3314492606.png",
+  "sisi":"https://imgfast.net/users/3812/33/12/29/smiles/350428045.gif",
+  "bave":"https://imgfast.net/users/3812/33/12/29/smiles/3728786105.gif",
+  "perv":"https://imgfast.net/users/3812/33/12/29/smiles/1621632115.gif",
+  "obalie":"https://imgfast.net/users/3812/33/12/29/smiles/3758460799.png",
+  "joa":"https://imgfast.net/users/3812/33/12/29/smiles/2595622478.png"
 }
