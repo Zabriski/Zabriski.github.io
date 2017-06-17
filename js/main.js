@@ -12,5 +12,14 @@ $(document).ready(function() {
       $(this).addClass("active")
         .parent().siblings().children().removeClass("active");
     }
-  })
+  });
+
+  $('.editor').summernote({
+    toolbar: [
+      ['insert', ['picture', 'video']],
+      ['misc', ['codeview']],
+    ],
+    placeholder: 'Démarrez une conversation ...'
+  });
+
 })
