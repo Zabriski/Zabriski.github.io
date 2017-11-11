@@ -1,0 +1,100 @@
+﻿<html>
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="json/team.js"></script>
+  <link rel="stylesheet" href="css\style.css"/>
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
+
+</head>
+
+<body>
+<div class="container">
+	<div class="circle"></div>
+	<div id="" class="hexagon trainer"></div>
+	<div id="venusaur" class="hexagon pokemon venusaur p00"><img src="http://pod.pokellector.com/cards/40/Venusaur.SV.13.png"/></div>			
+	<div id="gengar" class="hexagon pokemon gengar p10"><img src="https://www.pkparaiso.com/tcg/twentiethann/es_512/035.jpg"/></div>		
+	<div id="muk" class="hexagon pokemon muk p08"><img src="https://www.pkparaiso.com/tcg/sm1/es_512/058.jpg"/></div>		
+	<div id="poipole" class="hexagon pokemon poipole p06"><img src=""/></div>		
+	<div id="toxapex" class="hexagon pokemon toxapex p04"><img src="https://www.pkparaiso.com/tcg/sm1/es_512/063.jpg"/></div>		
+	<div id="salazzle" class="hexagon pokemon salazzle p02"><img src="https://www.pkparaiso.com/tcg/sm2/es_512/016.jpg"/></div>		
+</div>
+
+<script>
+function getData(pkm) {
+	window[pkm] = $.grep(window.team, function (data) {
+				return(data.name === pkm);
+			});
+}
+</script>
+<script>
+var pos = $('.trainer').position();
+
+$.fn.extend({
+ hexa: function () {
+	var $this = $(this), a = $this.index() + 1;
+	$this.css("top",123 + Math.round((102 * Math.cos(a * (2 * Math.PI / 6)))) + 'px')
+		 .css("left",115 + Math.round((102 * Math.sin(a * (2 * Math.PI / 6)))) + 'px');
+ },
+ hexa2: function () {
+  	var $this = $(this), a = $this.index() + 1;
+ 	$this.animate({"top":123 + Math.round((102 * Math.cos(a * (2 * Math.PI / 6)))) + 'px',
+	"left":115 + Math.round((102 * Math.sin(a * (2 * Math.PI / 6)))) + 'px'}, 400);
+ }
+ });
+ 
+ function initData(spe) {
+	var set = window[spe][0].moveset;
+	for(n=0,arr=[1,2,4,5];n < arr.length;n++) {
+		var a = n + 1;
+		var match = $.grep(set, function (data) {
+				return(data.slot === a);
+			}), match = match[0];
+		$(`.poke-${arr[n]}`).css("background",match.type.color)
+		.text(match.name);
+		console.log(match);
+	}
+ 
+ };
+ 
+ function removeInfo(pkm) {
+	$('.focus').removeClass("flip");
+		$('.data').animate({"top":pos.top,"left":pos.left},500).delay(300, function() {$(this).remove()});
+		$('.focus').addClass("bounceOut");
+		setTimeout(function() {
+		  $('.focus').remove();
+		}, 700); 
+}
+
+ function dispInfo(pkm,name) {
+	pkm.clone().appendTo('.container').css("top",pos.top).css("left",pos.left).addClass("focus animated flip");
+		
+	for(i=1;i<=6;i++) {
+			$(`<div class='hexagon data poke-${i}'/>`).appendTo('.container')
+			.css("top",pos.top).css("left",pos.left)
+			.hexa2();
+		}
+		
+	initData(name);
+	
+	$('.focus').on('click', function() {
+			removeInfo(pkm);
+		});
+};
+
+$('.pokemon').each(function() {
+	var $this = $(this);
+	var name = $this.attr("id");
+	
+	$this.hexa();
+		 
+	getData(name);
+
+	$this.on('click', function() {
+		dispInfo($this,name);
+	});
+});
+
+</script>
+</body>
+</html>

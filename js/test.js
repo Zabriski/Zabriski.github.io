@@ -1,9 +1,0 @@
-{
-  "tadboo":"https://imgfast.net/users/3812/33/12/29/smiles/2533868582.png",
-  "paf":"https://imgfast.net/users/3812/33/12/29/smiles/3314492606.png",
-  "sisi":"https://imgfast.net/users/3812/33/12/29/smiles/350428045.gif",
-  "bave":"https://imgfast.net/users/3812/33/12/29/smiles/3728786105.gif",
-  "perv":"https://imgfast.net/users/3812/33/12/29/smiles/1621632115.gif",
-  "obalie":"https://imgfast.net/users/3812/33/12/29/smiles/3758460799.png",
-  "joa":"https://imgfast.net/users/3812/33/12/29/smiles/2595622478.png"
-}
