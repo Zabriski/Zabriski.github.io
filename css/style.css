@@ -1,0 +1,64 @@
+.container {
+	width: 345px;
+	height: 345px;
+	margin: auto;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.hexagon {
+  position: absolute;
+  overflow: hidden;
+  height: 100px; 
+  width: 115px;
+  background-color: #64C7CC;
+  -webkit-clip-path: polygon(0 50%,25% 0,75% 0,100% 50%,75% 100%,25% 100%);
+}
+
+.trainer {
+background: #181818 url(file:///C:/Users/Thomas/Downloads/Tadboo.svg) no-repeat 10% 10% / 100%;
+}
+.pokemon {
+background: #464646;
+}
+.pokemon img {
+	display: block;
+}
+.venusaur img {idth: 240%;margin: -93px -98px;}
+.gengar img {margin: -50px -40px;width: 200%;}
+.muk img {width: 200%;margin: -37px -75px;}
+.poipole img {}
+.toxapex img {margin: -130px -150px;width: 350%}
+.salazzle img {width: 300%;margin: -55px -65px;}
+
+.circle {
+	width: 234px;
+	height: 234px;
+	background: #636363;
+	border-radius: 250px;
+}
+
+.not-visible {
+	opacity: 0;
+}
+.visible {
+	opacity: 1;
+	transition: .1s ease;
+}
+.focus {
+	z-index: 99;
+}
+.pokemon {
+	cursor: pointer;
+}
+.poke-3, .poke-6 {
+	background: #323232;
+}
+.data {
+	text-align: center;
+	line-height: 100px;
+	color: #fff;
+	font-family: Roboto;
+	font-size: .75em;
+}
