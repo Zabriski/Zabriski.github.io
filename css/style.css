@@ -25,7 +25,7 @@ background: #464646;
 .pokemon img {
 	display: block;
 }
-.venusaur img {idth: 240%;margin: -93px -98px;}
+.venusaur img {width: 240%;margin: -93px -98px;}
 .gengar img {margin: -50px -40px;width: 200%;}
 .muk img {width: 200%;margin: -37px -75px;}
 .poipole img {}
