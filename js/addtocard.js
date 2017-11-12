@@ -226,9 +226,8 @@ jQuery(document).ready(function($){
 	// quantité affichées dans msg : <span>x"+$(this).find('.quantity').find('select').val()+"</span>
 	a=a.join('\n');
 	var solde = Number($('.u_money').text()-cartTotal.text());
-	var msg = "<div class='mart-receipt'><h1>Pokémart</h1><h2>Récapitulatif d'achat</h2><ul>"+a+"</ul><div class='client-total'>Total payé : <span>"+cartTotal.text()+"</span></div></div>";
+	var msg = "<div class='mart-receipt'><h1>Pokémart</h1><h2>Récapitulatif d'achat</h2><ul>"+a+"</ul><div class='client-total'>Total payé : <span>"+cartTotal.text()+"<i class="fa fa-rub"></i></span></div></div>";
 	input.val(msg);
-	console.log(input.val());
 	submit.trigger('click');
 	}}
 	});
