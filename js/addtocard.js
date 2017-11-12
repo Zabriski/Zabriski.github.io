@@ -220,13 +220,13 @@ jQuery(document).ready(function($){
 	} else{
 	var a=[];
 		$('.product:not(.deleted)').each(function(){
-			var dre = "<li><b>"+$(this).find('h3 > a').html()+"</b> "+$(this).find('.recap').html()+" <span>"+$(this).find('.price').text() * $(this).find('.quantity').find('select').val()+"</span></li>";
+			var dre = "<li><b>"+$(this).find('h3 > a').html()+"</b> "+$(this).find('.recap').html()+" <span>"+$(this).find('.price').text() * $(this).find('.quantity').find('select').val()+"<i class='fa fa-rub'></i></span></li>";
 			a.push(dre);
 		});
 	// quantité affichées dans msg : <span>x"+$(this).find('.quantity').find('select').val()+"</span>
 	a=a.join('\n');
 	var solde = Number($('.u_money').text()-cartTotal.text());
-	var msg = "<div class='mart-receipt'><h1>Pokémart</h1><h2>Récapitulatif d'achat</h2><ul>"+a+"</ul><div class='client-total'>Total payé : <span>"+cartTotal.text()+"<i class="fa fa-rub"></i></span></div></div>";
+	var msg = "<div class='mart-receipt'><h1>Pokémart</h1><h2>Récapitulatif d'achat</h2><ul>"+a+"</ul><div class='client-total'>Total payé : <span>"+cartTotal.text()+"<i class='fa fa-rub'></i></span></div></div>";
 	input.val(msg);
 	submit.trigger('click');
 	}}
