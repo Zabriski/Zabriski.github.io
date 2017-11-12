@@ -17,17 +17,16 @@
 .cd-header h2 {
     color: #d72a23;
     font-family: Montserrat;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     font-weight: bold;
     text-align: center;
-    letter-spacing: .6em;
-    font-size: 2.45rem;
-    position: absolute;
-    bottom: .58em;
-    left: 50%;
-    margin-left: -7.18em;
+    letter-spacing: .2em;
+    font-size: 2.15rem;
+    /* left: 50%; */
+    margin: -37px auto;
     background: #1d2c3f;
     padding: 0 0 0 .5em;
+    width: 50%;
 }
 
 .cd-main-content {

@@ -226,7 +226,7 @@ jQuery(document).ready(function($){
 	// quantité affichées dans msg : <span>x"+$(this).find('.quantity').find('select').val()+"</span>
 	a=a.join('\n');
 	var solde = Number($('.u_money').text()-cartTotal.text());
-	var msg = "<div class='mart-receipt'><h1>Pokémart</h1><h2>Certificat d'achat</h2><div class='client-info'>"+$('.cd-client-info').text()+"</div><ul>"+a+"</ul><div class='client-total'>Total payé : <span>"+cartTotal.text()+"</span></div><div class='client-solde'>Compte après paiement : <span>"+solde+"</span></div></div> #pokemart";
+	var msg = "<div class='mart-receipt'><h1>Pokémart</h1><h2>Récapitulatif d'achat</h2><ul>"+a+"</ul><div class='client-total'>Total payé : <span>"+cartTotal.text()+"</span></div></div>";
 	input.val(msg);
 	console.log(input.val());
 	submit.trigger('click');
