@@ -1,100 +1,85 @@
-﻿<html>
-
+<!doctype html>
+<html lang="en" class="no-js">
 <head>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="json/team.js"></script>
-  <link rel="stylesheet" href="css\style.css"/>
- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet">
+	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="css/addtocard.css"> <!-- Resource style -->
+	<link rel="stylesheet" href="css/filter.css"> <!-- Resource style -->
+  	<script src="js/modernizr.js"></script> <!-- Modernizr -->
+	<script src="js/stock.js"></script> <!-- liste produits -->
 
+	<title>PokéMart</title>
 </head>
-
 <body>
-<div class="container">
-	<div class="circle"></div>
-	<div id="" class="hexagon trainer"></div>
-	<div id="venusaur" class="hexagon pokemon venusaur p00"><img src="http://pod.pokellector.com/cards/40/Venusaur.SV.13.png"/></div>			
-	<div id="gengar" class="hexagon pokemon gengar p10"><img src="https://www.pkparaiso.com/tcg/twentiethann/es_512/035.jpg"/></div>		
-	<div id="muk" class="hexagon pokemon muk p08"><img src="https://www.pkparaiso.com/tcg/sm1/es_512/058.jpg"/></div>		
-	<div id="poipole" class="hexagon pokemon poipole p06"><img src=""/></div>		
-	<div id="toxapex" class="hexagon pokemon toxapex p04"><img src="https://www.pkparaiso.com/tcg/sm1/es_512/063.jpg"/></div>		
-	<div id="salazzle" class="hexagon pokemon salazzle p02"><img src="https://www.pkparaiso.com/tcg/sm2/es_512/016.jpg"/></div>		
-</div>
+<header class="cd-header">
+		<h1>Pokemart</h1>
+		<h2>Sylphe SARL</h2>
+		<div class="cd-client-info">
+			<div>Client : <span class="u_name">Amewryllis</span></div>
+			<div>Compte : <span class="u_money">1000</span></div>
+		</div>
+</header>
+<main class="cd-main-content">
+	<div class="cd-tab-filter-wrapper">
+		<div class="cd-tab-filter">
+			<ul class="cd-filters">
+				<li class="placeholder"> 
+					<a data-type="all" href="#0">All</a> <!-- selected option on mobile -->
+				</li> 
+				<li class="filter"><a class="selected first" href="#0" data-type="all"></a></li>
+				<li class="filter" data-filter=".ou"><a href="#0" data-type="health">Uber/OU/BL</a></li>
+				<li class="filter" data-filter=".uu"><a href="#0" data-type="fight">UU/BL2</a></li>
+				<li class="filter" data-filter=".ru"><a href="#0" data-type="food">RU/BL3</a></li>
+				<li class="filter" data-filter=".nu"><a href="#0" data-type="misc">NU/PU</a></li>
+			</ul> <!-- cd-filters -->
+		</div> <!-- cd-tab-filter -->
+	</div> <!-- cd-tab-filter-wrapper -->
+	<section class="cd-gallery">
+		<ul>
+			
+		</ul>
+		<div class="cd-fail-message">Aucun résultat</div>
+	</section> <!-- cd-gallery -->
+</main>
 
-<script>
-function getData(pkm) {
-	window[pkm] = $.grep(window.team, function (data) {
-				return(data.name === pkm);
-			});
-}
-</script>
-<script>
-var pos = $('.trainer').position();
+<div class="cd-cart-container empty">
+	<a href="#0" class="cd-cart-trigger">
+		Mon Panier
+		<ul class="count"> <!-- cart items count -->
+			<li>0</li>
+			<li>0</li>
+		</ul> <!-- .count -->
+	</a>
 
-$.fn.extend({
- hexa: function () {
-	var $this = $(this), a = $this.index() + 1;
-	$this.css("top",123 + Math.round((102 * Math.cos(a * (2 * Math.PI / 6)))) + 'px')
-		 .css("left",115 + Math.round((102 * Math.sin(a * (2 * Math.PI / 6)))) + 'px');
- },
- hexa2: function () {
-  	var $this = $(this), a = $this.index() + 1;
- 	$this.animate({"top":123 + Math.round((102 * Math.cos(a * (2 * Math.PI / 6)))) + 'px',
-	"left":115 + Math.round((102 * Math.sin(a * (2 * Math.PI / 6)))) + 'px'}, 400);
- }
- });
- 
- function initData(spe) {
-	var set = window[spe][0].moveset;
-	for(n=0,arr=[1,2,4,5];n < arr.length;n++) {
-		var a = n + 1;
-		var match = $.grep(set, function (data) {
-				return(data.slot === a);
-			}), match = match[0];
-		$(`.poke-${arr[n]}`).css("background",match.type.color)
-		.text(match.name);
-		console.log("done");
-	}
- 
- };
- 
- function removeInfo(pkm) {
-	$('.focus').removeClass("flip");
-		$('.data').animate({"top":pos.top,"left":pos.left},500).delay(300, function() {$(this).remove()});
-		$('.focus').addClass("bounceOut");
-		setTimeout(function() {
-		  $('.focus').remove();
-		}, 700); 
-}
+	<div class="cd-cart">
+		<div class="wrapper">
+			<header>
+				<h2>Mon Panier</h2>
+				<span class="undo">Produit supprimé  <a href="#0"> Annuler</a></span>
+			</header>
+			
+			<div class="body">
+				<ul>
+					<!-- products added to the cart will be inserted here using JavaScript -->
+				</ul>
+			</div>
 
- function dispInfo(pkm,name) {
-	pkm.clone().appendTo('.container').css("top",pos.top).css("left",pos.left).addClass("focus animated flip");
-		
-	for(i=1;i<=6;i++) {
-			$(`<div class='hexagon data poke-${i}'/>`).appendTo('.container')
-			.css("top",pos.top).css("left",pos.left)
-			.hexa2();
-		}
-		
-	initData(name);
-	
-	$('.focus').on('click', function() {
-			removeInfo(pkm);
-		});
-};
-
-$('.pokemon').each(function() {
-	var $this = $(this);
-	var name = $this.attr("id");
-	
-	$this.hexa();
-		 
-	getData(name);
-
-	$this.on('click', function() {
-		dispInfo($this,name);
-	});
-});
-
-</script>
+			<footer>
+				<a href="#0" class="checkout btn"><em>Valider mes achats - <i class="fa fa-rub"></i><span>0</span></em></a>
+			</footer>
+		</div>
+	</div> <!-- .cd-cart -->
+</div> <!-- cd-cart-container -->
+<form id="form">
+	<input type="hidden" class="message" value=""/>
+</form>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script src="js/stock.js"></script> <!-- liste produits -->
+<script src="js/jquery.mixitup.min.js"></script>
+<script src="js/filter.js"></script> <!-- Resource jQuery -->
+<script src="js/addtocard.js"></script> <!-- Resource jQuery -->
 </body>
 </html>
